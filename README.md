@@ -1,8 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 Steps to clone setup ans run the app
 
 * git clone "repo goes here"
@@ -11,7 +8,7 @@ Steps to clone setup ans run the app
 
 * rake db:setup
 
-* # For the latest versions :
+Run this command to install migration used for gem 'acts-as-taggable-on'
 * rake acts_as_taggable_on_engine:install:migrations
 
 * rake db:migrate
