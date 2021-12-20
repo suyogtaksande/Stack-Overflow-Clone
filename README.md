@@ -3,22 +3,18 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Steps to clone setup ans run the app
 
-* Ruby version
+* git clone "repo goes here"
 
-* System dependencies
+* bundle install
 
-* Configuration
+* rake db:setup
 
-* Database creation
+* # For the latest versions :
+* rake acts_as_taggable_on_engine:install:migrations
 
-* Database initialization
+* rake db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
+* rails s
 * ...
