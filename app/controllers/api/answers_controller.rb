@@ -10,9 +10,18 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+  def accept_answer
+    answer = Answer.find(params[:id])
+    if answer.update(accept: answer_params)
+      render json: { message: 'Answer accepted' }, status: 200
+    else
+      render json: { message: 'Error while accepting answer' }, status: 500
+    end
+  end
+
   # Only allow a list of trusted parameters through.
   # 
   def answer_params
-    params.permit(:question_id, :body)
+    params.permit(:id, :question_id, :body, :accept)
   end
 end
