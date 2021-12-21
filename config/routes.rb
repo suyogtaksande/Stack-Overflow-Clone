@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get 'likes/create'
       delete 'likes/destroy'
       get 'questions/user_questions'
+      get 'questions/search_by_tag'
 
       resources :questions, only: [:create, :update, :show, :index] do
         get 'answers/create'
