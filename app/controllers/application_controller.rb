@@ -5,13 +5,13 @@ class ApplicationController < ActionController::API
   # Setting up current user
   #
   def current_user
-    # request.headers['access-token']
-    @current_user ||= User.find_by(email: request.headers['uid'])
+    current_user ||= User.find_by(email: request.headers['uid'])
   end
 
   # Verify user signed in
+  # 
   def user_signed_in_api?
-    current_user_api.present?
+    current_user.present?
   end
 
   # authenticate user with token if user is signed in
