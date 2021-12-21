@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_many :questions
+  has_many :likes, dependent: :destroy
 
   # override response
   #
