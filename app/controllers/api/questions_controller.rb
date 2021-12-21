@@ -55,7 +55,7 @@ class Api::QuestionsController < ApplicationController
   def search_by_tag
     questions = Question.tagged_with([params[:tag_list]], any: true)
     if questions
-      render json: { message: 'Successful', questions: questions, tags: params[:tag_list] }, status: 200
+      render json: { message: 'Successful', total: questions.count, questions: questions, tags: params[:tag_list] }, status: 200
     else
       render json: { message: 'No record found.' }, status: 404
     end
